@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Email to PDF Formatter</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      background: #f3f4f7;
+      font-family: "Segoe UI", Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+    }
+    .container {
+      max-width: 500px;
+      background: #fff;
+      margin: 40px auto 0 auto;
+      padding: 32px 28px 24px 28px;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.10);
+    }
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 12px;
+      color: #2d3748;
+      font-weight: 600;
+      text-align: center;
+    }
+    label {
+      display: block;
+      font-weight: 500;
+      margin: 20px 0 8px 0;
+      color: #4a5568;
+    }
+    textarea {
+      width: 100%;
+      min-height: 140px;
+      border-radius: 8px;
+      border: 1.5px solid #cbd5e0;
+      padding: 12px;
+      font-size: 1rem;
+      font-family: inherit;
+      resize: vertical;
+      background: #f9fafb;
+      box-sizing: border-box;
+      transition: border 0.2s;
+    }
+    textarea:focus {
+      border-color: #3182ce;
+      outline: none;
+      background: #fff;
+    }
+    .button {
+      display: block;
+      width: 100%;
+      padding: 14px;
+      margin-top: 20px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #fff;
+      background: linear-gradient(90deg, #3182ce 60%, #2b6cb0 100%);
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.18s;
+    }
+    .button:active {
+      background: #2b6cb0;
+    }
+    .demo {
+      background: #f7fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 14px 16px;
+      margin-top: 24px;
+      font-size: 0.98rem;
+      color: #2d3748;
+      white-space: pre-wrap;
+    }
+    .footer {
+      margin-top: 38px;
+      font-size: 0.98rem;
+      color: #a0aec0;
+      text-align: center;
+      user-select: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Email &rarr; PDF Formatter</h1>
+    <form>
+      <label for="email">Paste or write your email contents:</label>
+      <textarea id="email" name="email" placeholder="Type your email here..."></textarea>
+      <button type="button" class="button" onclick="alert('Pretending to generate PDF…\n(This is a mockup)')">
+        Convert to PDF
+      </button>
+    </form>
+    <div class="demo">
+      <b>Sample Email:</b><br><br>
+      To: <span style="color:#4c51bf;">alice.smith@company.com</span><br>
+      From: <span style="color:#4c51bf;">julie.jones@gmail.com</span><br>
+      Subject: <b>Meeting Notes: July Project Sync</b><br>
+      <br>
+      Hi Alice,<br><br>
+      Thanks for joining the call today!<br>
+      <br>
+      <b>Summary:</b><br>
+      • Project timeline: Still on track for August 15 launch.<br>
+      • Open items: Review the client feedback doc by Friday.<br>
+      • Next meeting: Tues, July 23, 2:00pm.<br>
+      <br>
+      Let me know if you have any questions.<br>
+      <br>
+      Best,<br>
+      Julie
+    </div>
+    <div class="footer">© 2025 Email PDF Formatter • All rights reserved</div>
+  </div>
+</body>
+</html>
