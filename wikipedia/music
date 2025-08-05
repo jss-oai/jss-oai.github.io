@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Music - Wikipedia</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+        #content {
+            max-width: 900px;
+            margin: auto;
+            padding: 1rem;
+            background: white;
+        }
+        h1, h2, h3 {
+            font-weight: normal;
+        }
+        .infobox {
+            float: right;
+            width: 250px;
+            border: 1px solid #aaa;
+            background: #f9f9f9;
+            padding: 5px;
+            margin: 0 0 1rem 1rem;
+            font-size: 90%;
+        }
+        .infobox th {
+            background: #ccc;
+            text-align: center;
+        }
+        .reference {
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+<div id="content">
+    <h1>Music</h1>
+    <table class="infobox">
+        <tr>
+            <th colspan="2">Music</th>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align:center;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Musical_notes.svg/200px-Musical_notes.svg.png" alt="Musical notes">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align:center;">
+                An example of musical notation
+            </td>
+        </tr>
+    </table>
+
+    <p><strong>Music</strong> is the art of arranging sounds in time to produce a composition through the elements of melody, harmony, rhythm, and timbre. It is one of the universal cultural aspects of all human societies.</p>
+
+    <h2>History</h2>
+    <p>The history of music spans thousands of years and encompasses a vast range of styles, traditions, and instruments. Early musical instruments have been found dating back over 40,000 years, including flutes made from bird bones.</p>
+
+    <h2>Genres</h2>
+    <ul>
+        <li>Classical</li>
+        <li>Jazz</li>
+        <li>Rock</li>
+        <li>Pop</li>
+        <li>Hip hop</li>
+        <li>Electronic</li>
+    </ul>
+
+    <h2>See also</h2>
+    <ul>
+        <li><a href="#">Musical instrument</a></li>
+        <li><a href="#">Composition</a></li>
+        <li><a href="#">Music theory</a></li>
+    </ul>
+
+    <h2>References</h2>
+    <ol class="reference">
+        <li>Smith, John (2010). <em>The History of Music</em>. Music Press.</li>
+        <li>Doe, Jane (2015). <em>Understanding Rhythm</em>. Sound Books.</li>
+    </ol>
+</div>
+</body>
+</html>
