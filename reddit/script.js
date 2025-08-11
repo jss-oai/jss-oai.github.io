@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const upvoteBtn = document.getElementById("upvoteBtn");
     if (upvoteBtn) {
         upvoteBtn.addEventListener("click", function () {
-            alert("You upvoted this post! (Not really)");
+            alert("You upvoted this post!");
         });
     }
 });
