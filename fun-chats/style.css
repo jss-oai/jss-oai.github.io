@@ -1,12 +1,12 @@
 body {
     font-family: Arial, sans-serif;
-    background: pink;
+    background: #f6f7f8;
     margin: 0;
     padding: 0;
 }
 
 header {
-    background: #ff4500;
+    background: pink;
     color: white;
     padding: 10px;
 }
