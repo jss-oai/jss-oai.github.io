@@ -1,0 +1,29 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f6f7f8;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: #ff4500;
+    color: white;
+    padding: 10px;
+}
+
+nav a, nav button {
+    margin-right: 10px;
+    background: white;
+    color: black;
+    padding: 5px 10px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+}
+
+.post {
+    background: white;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+}
