@@ -1,0 +1,234 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "community": "technology",
+      "author": "byte_bard",
+      "title": "Open-source GPU drivers show massive performance gains",
+      "body": "Recent patches to the Mesa project have closed the gap between proprietary and open drivers on several benchmarks.",
+      "timestamp": "2024-02-14T12:32:00Z",
+      "score": 523,
+      "comments": [
+        {
+          "author": "kernel_guru",
+          "body": "I switched last week and couldn't be happier.",
+          "timestamp": "2024-02-14T13:10:00Z",
+          "score": 87
+        },
+        {
+          "author": "driver_dan",
+          "body": "Wonder how this will affect older hardware support?",
+          "timestamp": "2024-02-14T13:45:00Z",
+          "score": 34
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "community": "gaming",
+      "author": "pixel_pioneer",
+      "title": "Speedrunner completes 'Mystic Quest' in under 30 minutes",
+      "body": "The previous record stood for nearly two years before today's run shaved off 42 seconds.",
+      "timestamp": "2024-03-02T09:05:00Z",
+      "score": 401,
+      "comments": [
+        {
+          "author": "quest_fan",
+          "body": "That final boss glitch was wild!",
+          "timestamp": "2024-03-02T09:45:00Z",
+          "score": 76
+        },
+        {
+          "author": "speedster",
+          "body": "They're streaming a tutorial tomorrow for anyone interested.",
+          "timestamp": "2024-03-02T10:12:00Z",
+          "score": 51
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "community": "science",
+      "author": "astro_alex",
+      "title": "Researchers map water deposits on the lunar south pole",
+      "body": "New data from the Artemis missions reveal promising locations for future bases.",
+      "timestamp": "2024-01-28T08:20:00Z",
+      "score": 612,
+      "comments": [
+        {
+          "author": "moonshot",
+          "body": "This could make permanent stations much more viable.",
+          "timestamp": "2024-01-28T09:00:00Z",
+          "score": 102
+        },
+        {
+          "author": "space_case",
+          "body": "Is there any timeline for extracting it?",
+          "timestamp": "2024-01-28T09:22:00Z",
+          "score": 58
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "community": "books",
+      "author": "word_weaver",
+      "title": "Local library launches 24/7 pickup lockers",
+      "body": "Patrons can now collect holds at any time with the new self-service lockers installed outside.",
+      "timestamp": "2024-02-05T15:40:00Z",
+      "score": 198,
+      "comments": [
+        {
+          "author": "page_turner",
+          "body": "Finally, no more rushing after work!",
+          "timestamp": "2024-02-05T16:12:00Z",
+          "score": 43
+        },
+        {
+          "author": "late_reader",
+          "body": "Wish every branch had these already.",
+          "timestamp": "2024-02-05T17:03:00Z",
+          "score": 21
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "community": "travel",
+      "author": "nomad_nina",
+      "title": "Sleeper trains are making a comeback across Europe",
+      "body": "Several countries plan to reopen routes as travelers seek low-carbon adventures.",
+      "timestamp": "2024-03-10T18:55:00Z",
+      "score": 354,
+      "comments": [
+        {
+          "author": "railfan",
+          "body": "The Vienna to Paris line is already booked solid for summer.",
+          "timestamp": "2024-03-10T19:30:00Z",
+          "score": 64
+        },
+        {
+          "author": "green_go",
+          "body": "Great alternative to short flights.",
+          "timestamp": "2024-03-10T20:05:00Z",
+          "score": 27
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "community": "music",
+      "author": "vinyl_vicky",
+      "title": "Indie band 'Solar Echoes' drops surprise album",
+      "body": "The 10-track release blends synthwave and shoegaze, and it's already trending on several platforms.",
+      "timestamp": "2024-03-08T00:12:00Z",
+      "score": 289,
+      "comments": [
+        {
+          "author": "soundhound",
+          "body": "Track 4 has been on repeat all morning.",
+          "timestamp": "2024-03-08T01:02:00Z",
+          "score": 52
+        },
+        {
+          "author": "shoegazer",
+          "body": "Anyone have lyric interpretations?",
+          "timestamp": "2024-03-08T01:45:00Z",
+          "score": 19
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "community": "art",
+      "author": "brushstrokes",
+      "title": "Artist recreates classic paintings with 3D printing",
+      "body": "The results allow viewers to feel the texture of the original masterpieces.",
+      "timestamp": "2024-02-22T11:25:00Z",
+      "score": 247,
+      "comments": [
+        {
+          "author": "gallery_goer",
+          "body": "This could change art education forever.",
+          "timestamp": "2024-02-22T11:59:00Z",
+          "score": 61
+        },
+        {
+          "author": "skeptic_sketch",
+          "body": "Wonder how museums feel about replicas?",
+          "timestamp": "2024-02-22T12:20:00Z",
+          "score": 33
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "community": "news",
+      "author": "daily_digest",
+      "title": "City council approves major downtown revitalization plan",
+      "body": "The plan includes expanded green spaces, dedicated bike lanes, and incentives for local businesses.",
+      "timestamp": "2024-03-15T14:05:00Z",
+      "score": 178,
+      "comments": [
+        {
+          "author": "urbanist",
+          "body": "Hoping this doesn't drive rents even higher.",
+          "timestamp": "2024-03-15T14:50:00Z",
+          "score": 39
+        },
+        {
+          "author": "planner_pro",
+          "body": "The bike network looks especially promising.",
+          "timestamp": "2024-03-15T15:18:00Z",
+          "score": 22
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "community": "cooking",
+      "author": "pan_man",
+      "title": "One-pot lemon garlic pasta wins weeknight dinners",
+      "body": "Simple ingredients and a 20-minute cook time make this dish a staple.",
+      "timestamp": "2024-02-18T17:45:00Z",
+      "score": 321,
+      "comments": [
+        {
+          "author": "spicequeen",
+          "body": "Add capers for an extra zing!",
+          "timestamp": "2024-02-18T18:15:00Z",
+          "score": 47
+        },
+        {
+          "author": "kitchen_king",
+          "body": "Made this last night and everyone loved it.",
+          "timestamp": "2024-02-18T18:40:00Z",
+          "score": 31
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "community": "photography",
+      "author": "shutter_sam",
+      "title": "Capturing lightning with a smartphone: tips and tricks",
+      "body": "A guide to using manual exposure settings to catch storms in action.",
+      "timestamp": "2024-01-30T22:10:00Z",
+      "score": 265,
+      "comments": [
+        {
+          "author": "stormchaser",
+          "body": "I've had better luck with burst mode during thunderstorms.",
+          "timestamp": "2024-01-30T22:55:00Z",
+          "score": 54
+        },
+        {
+          "author": "iso_lover",
+          "body": "Don't forget a sturdy tripod!",
+          "timestamp": "2024-01-30T23:14:00Z",
+          "score": 29
+        }
+      ]
+    }
+  ]
+}
