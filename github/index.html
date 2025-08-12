@@ -23,18 +23,22 @@
       href="https://cdn.jsdelivr.net/npm/@primer/css@21.0.7/dist/primer.css"
     />
     <link rel="stylesheet" href="style.css" />
-    <style>
-      body.hidden { display: none; }
-    </style>
+    <style>html{display:none}</style>
     <script>
       (function() {
         const PASS = "apple";
         const KEY = "siteAuth";
-        if (localStorage.getItem(KEY) === "true") return;
+        if (localStorage.getItem(KEY) === "true"){
+          document.documentElement.style.display = "";
+
+          return;
+        }
 
         const userPass = prompt("Enter password:");
         if (userPass === PASS) {
           localStorage.setItem(KEY, "true");
+          document.documentElement.style.display = "";
+
         } else {
           document.documentElement.innerHTML =
             "<h1 style='text-align:center;margin-top:50px;'>Access Denied</h1>";
