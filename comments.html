@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Comments (localStorage)</title>
+<style>
+  body { font-family: system-ui, sans-serif; margin: 2rem auto; max-width: 760px; padding: 0 1rem; }
+  h1 { font-size: 1.2rem; }
+  form { display: grid; gap: .5rem; margin-bottom: 1rem; }
+  input, textarea { padding: .5rem; border: 1px solid #ccc; border-radius: 6px; }
+  button { padding: .5rem .8rem; border: 1px solid #888; background: #f7f7f7; border-radius: 6px; cursor: pointer; }
+  ul { list-style: none; padding: 0; display: grid; gap: .75rem; }
+  .comment { border: 1px solid #e5e5e5; border-radius: 8px; padding: .75rem; }
+  .meta { color: #666; font-size: .85rem; margin-bottom: .25rem; }
+  .actions { display: flex; gap: .5rem; margin-top: .5rem; }
+  .empty { color: #777; font-style: italic; }
+</style>
+</head>
+<body>
+
+<h1>Comments</h1>
+
+<form id="comment-form" autocomplete="off">
+  <input id="name" placeholder="Your name (optional)" />
+  <textarea id="text" placeholder="Write a comment…" rows="3" required></textarea>
+  <div>
+    <button type="submit">Post</button>
+    <button type="button" id="clear-all" title="Delete all comments">Clear all</button>
+    <button type="button" id="export" title="Download comments as JSON">Export</button>
+    <label style="margin-left:.5rem">
+      Import <input type="file" id="import" accept="application/json" style="display:none">
+      <button type="button" id="import-btn">Choose file…</button>
+    </label>
+  </div>
+</form>
+
+<ul id="list"></ul>
+<p id="empty" class="empty" hidden>No comments yet.</p>
+
+<script>
+(() => {
+  const STORAGE_KEY = "demo_comments_v1";
+
+  /** @type {{id:string,name:string,text:string,created:number}[]} */
+  let comments = load();
+
+  const form = document.getElementById("comment-form");
+  const nameEl = document.getElementById("name");
+  const textEl = document.getElementById("text");
+  const list = document.getElementById("list");
+  const empty = document.getElementById("empty");
+  const clearAllBtn = document.getElementById("clear-all");
+  const exportBtn = document.getElementById("export");
+  const importBtn = document.getElementById("import-btn");
+  const importInput = document.getElementById("import");
+
+  render();
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const name = (nameEl.value || "").trim();
+    const text = (textEl.value || "").trim();
+    if (!text) return;
+
+    comments.push({
+      id: crypto.randomUUID ? crypto.randomUUID() : String(Date.now()) + Math.random(),
+      name,
+      text,
+      created: Date.now(),
+    });
+    persist();
+    textEl.value = "";
+    render();
+  });
+
+  clearAllBtn.addEventListener("click", () => {
+    if (!comments.length) return;
+    if (confirm("Delete all comments?")) {
+      comments = [];
+      persist();
+      render();
+    }
+  });
+
+  exportBtn.addEventListener("click", () => {
+    const blob = new Blob([JSON.stringify(comments, null, 2)], { type: "application/json" });
+    const url = URL.createObjectURL(blob);
+    const a = Object.assign(document.createElement("a"), {
+      href: url,
+      download: "comments.json",
+    });
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    URL.revokeObjectURL(url);
+  });
+
+  importBtn.addEventListener("click", () => importInput.click());
+  importInput.addEventListener("change", async () => {
+    const file = importInput.files && importInput.files[0];
+    if (!file) return;
+    try {
+      const text = await file.text();
+      const parsed = JSON.parse(text);
+      if (!Array.isArray(parsed)) throw new Error("Invalid format");
+      // Basic shape validation
+      comments = parsed.filter(
+        (c) => c && typeof c.text === "string" && typeof c.created === "number"
+      );
+      persist();
+      render();
+    } catch (err) {
+      alert("Import failed: " + (err && err.message ? err.message : String(err)));
+    } finally {
+      importInput.value = "";
+    }
+  });
+
+  function load() {
+    try {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      return raw ? JSON.parse(raw) : [];
+    } catch {
+      return [];
+    }
+  }
+
+  function persist() {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(comments));
+  }
+
+  function timeAgo(ts) {
+    const s = Math.floor((Date.now() - ts) / 1000);
+    if (s < 60) return `${s}s ago`;
+    const m = Math.floor(s / 60);
+    if (m < 60) return `${m}m ago`;
+    const h = Math.floor(m / 60);
+    if (h < 24) return `${h}h ago`;
+    const d = Math.floor(h / 24);
+    return `${d}d ago`;
+  }
+
+  function render() {
+    list.innerHTML = "";
+    empty.hidden = comments.length > 0;
+
+    comments
+      .slice() // shallow copy
+      .sort((a, b) => a.created - b.created) // oldest first
+      .forEach((c) => {
+        const li = document.createElement("li");
+        li.className = "comment";
+
+        const meta = document.createElement("div");
+        meta.className = "meta";
+        meta.textContent = `${c.name ? c.name + " • " : ""}${new Date(c.created).toLocaleString()} (${timeAgo(c.created)})`;
+        li.appendChild(meta);
+
+        const body = document.createElement("div");
+        // Prevent XSS: set as textContent, not innerHTML
+        body.textContent = c.text;
+        li.appendChild(body);
+
+        const actions = document.createElement("div");
+        actions.className = "actions";
+
+        const del = document.createElement("button");
+        del.textContent = "Delete";
+        del.addEventListener("click", () => {
+          comments = comments.filter((x) => x.id !== c.id);
+          persist();
+          render();
+        });
+        actions.appendChild(del);
+
+        const edit = document.createElement("button");
+        edit.textContent = "Edit";
+        edit.addEventListener("click", () => {
+          const next = prompt("Edit comment:", c.text);
+          if (next != null) {
+            c.text = next.trim();
+            persist();
+            render();
+          }
+        });
+        actions.appendChild(edit);
+
+        li.appendChild(actions);
+        list.appendChild(li);
+      });
+  }
+})();
+</script>
+
+</body>
+</html>
