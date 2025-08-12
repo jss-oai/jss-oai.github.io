@@ -1,10 +1,6 @@
 <!doctype html>
 
-<html lang="en">
-
-
-<!-- 
-  
+<!-- <html lang="en">
   <head>
     <meta charset="utf-8" />
     <title>Dashboard · @jss-oai</title>
@@ -16,34 +12,36 @@
     <link rel="stylesheet" href="style.css" />
   </head> -->
 
+
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <title>Dashboard · @jss-oai</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <style>body{visibility:hidden}</style>
-    <script>
-    (function(){
-      const SECRET="opensesame";   // change this
-      const COOKIE="auth";
-      if(document.cookie.indexOf(COOKIE+"=1")===-1){
-        if(prompt("Password:")===SECRET){
-          document.cookie = COOKIE+"=1; max-age="+(7*24*60*60)+"; path=/";
-        }else{
-          document.documentElement.innerHTML="<body><h1>Access Denied</h1></body>";
-          throw new Error("Access denied");
-        }
-      }
-      document.addEventListener("DOMContentLoaded",()=>{document.body.style.visibility="visible";});
-    })();
-    </script>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@primer/css@21.0.7/dist/primer.css"
     />
     <link rel="stylesheet" href="style.css" />
-  </head>
+    <style>
+      body.hidden { display: none; }
+    </style>
+    <script>
+      (function() {
+        const PASS = "apple";
+        const KEY = "siteAuth";
+        if (localStorage.getItem(KEY) === "true") return;
 
-  
+        const userPass = prompt("Enter password:");
+        if (userPass === PASS) {
+          localStorage.setItem(KEY, "true");
+        } else {
+          document.documentElement.innerHTML =
+            "<h1 style='text-align:center;margin-top:50px;'>Access Denied</h1>";
+        }
+      })();
+    </script>
+  </head>
   <body class="bg-gray-light">
     <header class="Header">
       <div class="Header-item">
