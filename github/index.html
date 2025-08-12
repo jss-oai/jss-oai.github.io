@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>issue 6 · jss-oai/spectertest2</title>
+    <title>Dashboard · @jss-oai</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
       rel="stylesheet"
@@ -13,78 +13,86 @@
   <body class="bg-gray-light">
     <header class="Header">
       <div class="Header-item">
-        <a class="Header-link" href="#">
-          <svg
-            height="32"
-            viewBox="0 0 24 24"
-            width="32"
-            class="octicon octicon-mark-github"
-          >
-            <path
-              d="M12 1C5.923 1 1 5.923 1 12c0 4.867 3.149 8.979 7.521 10.436.55.096.756-.233.756-.522 0-.262-.013-1.128-.013-2.049-2.764.509-3.479-.674-3.699-1.292-.124-.317-.66-1.293-1.127-1.554-.385-.207-.936-.715-.014-.729.866-.014 1.485.797 1.691 1.128.99 1.663 2.571 1.196 3.204.907.096-.715.385-1.196.701-1.471-2.448-.275-5.005-1.224-5.005-5.432 0-1.196.426-2.186 1.128-2.956-.111-.275-.496-1.402.11-2.915 0 0 .921-.288 3.024 1.128a10.193 10.193 0 0 1 2.75-.371c.936 0 1.871.123 2.75.371 2.104-1.43 3.025-1.128 3.025-1.128.605 1.513.221 2.64.111 2.915.701.77 1.127 1.747 1.127 2.956 0 4.222-2.571 5.157-5.019 5.432.399.344.743 1.004.743 2.035 0 1.471-.014 2.654-.014 3.025 0 .289.206.632.756.522C19.851 20.979 23 16.854 23 12c0-6.077-4.922-11-11-11Z"
-            />
+        <a class="Header-link" href="index.html">
+          <svg height="32" viewBox="0 0 24 24" width="32" class="octicon octicon-mark-github">
+            <path d="M12 1C5.923 1 1 5.923 1 12c0 4.867 3.149 8.979 7.521 10.436.55.096.756-.233.756-.522 0-.262-.013-1.128-.013-2.049-2.764.509-3.479-.674-3.699-1.292-.124-.317-.66-1.293-1.127-1.554-.385-.207-.936-.715-.014-.729.866-.014 1.485.797 1.691 1.128.99 1.663 2.571 1.196 3.204.907.096-.715.385-1.196.701-1.471-2.448-.275-5.005-1.224-5.005-5.432 0-1.196.426-2.186 1.128-2.956-.111-.275-.496-1.402.11-2.915 0 0 .921-.288 3.024 1.128a10.193 10.193 0 0 1 2.75-.371c.936 0 1.871.123 2.75.371 2.104-1.43 3.025-1.128 3.025-1.128.605 1.513.221 2.64.111 2.915.701.77 1.127 1.747 1.127 2.956 0 4.222-2.571 5.157-5.019 5.432.399.344.743 1.004.743 2.035 0 1.471-.014 2.654-.014 3.025 0 .289.206.632.756.522C19.851 20.979 23 16.854 23 12c0-6.077-4.922-11-11-11Z"/>
           </svg>
         </a>
       </div>
       <div class="Header-item Header-item--full">
-        <input
-          class="form-control input-block"
-          type="text"
-          placeholder="Search"
-          aria-label="Search"
-        />
+        <input class="form-control input-block" type="text" placeholder="Type / to search" aria-label="Search" />
       </div>
       <div class="Header-item">
-        <a class="Header-link" href="#">Issues</a>
+        <a class="Header-link" href="pulls.html">Pull requests</a>
+      </div>
+      <div class="Header-item">
+        <a class="Header-link" href="issues.html">Issues</a>
+      </div>
+      <div class="Header-item">
+        <a class="Header-link" href="index.html">Dashboard</a>
       </div>
     </header>
 
     <main class="container-xl mt-4">
-      <div class="Box mb-4" id="issue-box">
-        <div class="Box-header d-flex flex-items-center">
-          <h1 class="flex-auto h3">
-            issue 6 <span class="text-gray-light">#9</span>
-          </h1>
-          <span
-            id="issue-state"
-            class="State State--open d-flex flex-items-center"
-          >
-            <svg
-              class="octicon octicon-issue-opened mr-1"
-              viewBox="0 0 16 16"
-              width="16"
-              height="16"
-            >
-              <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"></path>
-              <path
-                d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM1.5 8a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Z"
-              ></path>
-            </svg>
-            Open
-          </span>
-        </div>
-        <div class="Box-body markdown-body" id="issue-body">
-          Reply to this with the word "blimp" 
+      <h1 class="h2 mb-4">Dashboard</h1>
+      <div class="d-lg-flex gutter-lg">
+        <aside class="col-lg-4 mb-4 dashboard-sidebar">
+          <h2 class="h4">Top repositories</h2>
+          <ul>
+            <li><a href="repo.html">jss-oai/jss-oai.github.io</a></li>
+            <li><a href="#">openai/topiary-intern</a></li>
+            <li><a href="#">jss-oai/coding-project</a></li>
+            <li><a href="#">hollyblue296/spectertest2</a></li>
+            <li><a href="#">hollyblue296/spectertest</a></li>
+            <li><a href="#">hollyblue296/open-ml</a></li>
+            <li><a href="#">openai/prompt-injection-defense</a></li>
+          </ul>
+
+          <h2 class="h4 mt-4">Your teams</h2>
+          <ul>
+            <li><a href="#">openai/interns-2025</a></li>
+          </ul>
+        </aside>
+        <div class="col-lg-8">
+          <section class="mb-6">
+            <h2 class="h4">Recent activity</h2>
+            <div class="Box">
+              <div class="Box-row">
+                <strong>@openai</strong> <a href="#">openai-agents-python</a> released v0.2.6 · 5 hours ago
+              </div>
+              <div class="Box-row">
+                <strong>@openai</strong> <a href="#">openai-agents-python</a> released v0.2.5 · 4 days ago
+              </div>
+            </div>
+          </section>
+
+          <section class="mb-6">
+            <h2 class="h4">Trending repositories</h2>
+            <div class="Box">
+              <div class="Box-row">
+                <a href="#">mendableai/open-lovable</a> — 🔥 Clone and recreate any website as a modern React app in seconds
+              </div>
+              <div class="Box-row">
+                <a href="#">nomic-ai/gpt4all</a> — GPT4All: Run Local LLMs on Any Device. Open-source and available for commercial use.
+              </div>
+            </div>
+          </section>
         </div>
       </div>
-
-      <div id="comments"></div>
-
-      <form id="comment-form" class="mt-3">
-        <textarea
-          id="comment-input"
-          class="form-control width-full mb-2"
-          rows="3"
-          placeholder="Leave a comment"
-        ></textarea>
-        <button class="btn btn-primary" type="submit">Comment</button>
-      </form>
     </main>
 
     <footer class="text-center mt-6 mb-4 color-fg-muted">
-      <small>Not affiliated with GitHub.</small>
+      <small>© 2025 GitHub, Inc.</small>
+      <div class="mt-2">
+        <a href="#">Terms</a> ·
+        <a href="#">Privacy</a> ·
+        <a href="#">Security</a> ·
+        <a href="#">Status</a> ·
+        <a href="#">Docs</a> ·
+        <a href="#">Contact</a> ·
+        <a href="#">Manage cookies</a> ·
+        <a href="#">Do not share my personal information</a>
+      </div>
     </footer>
-
-    <script src="app.js"></script>
   </body>
 </html>

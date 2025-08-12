@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>hollyblue296/spectertest2</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@primer/css@21.0.7/dist/primer.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="bg-gray-light">
+    <header class="Header">
+      <div class="Header-item">
+        <a class="Header-link" href="index.html">
+          <svg height="32" viewBox="0 0 24 24" width="32" class="octicon octicon-mark-github">
+            <path d="M12 1C5.923 1 1 5.923 1 12c0 4.867 3.149 8.979 7.521 10.436.55.096.756-.233.756-.522 0-.262-.013-1.128-.013-2.049-2.764.509-3.479-.674-3.699-1.292-.124-.317-.66-1.293-1.127-1.554-.385-.207-.936-.715-.014-.729.866-.014 1.485.797 1.691 1.128.99 1.663 2.571 1.196 3.204.907.096-.715.385-1.196.701-1.471-2.448-.275-5.005-1.224-5.005-5.432 0-1.196.426-2.186 1.128-2.956-.111-.275-.496-1.402.11-2.915 0 0 .921-.288 3.024 1.128a10.193 10.193 0 0 1 2.75-.371c.936 0 1.871.123 2.75.371 2.104-1.43 3.025-1.128 3.025-1.128.605 1.513.221 2.64.111 2.915.701.77 1.127 1.747 1.127 2.956 0 4.222-2.571 5.157-5.019 5.432.399.344.743 1.004.743 2.035 0 1.471-.014 2.654-.014 3.025 0 .289.206.632.756.522C19.851 20.979 23 16.854 23 12c0-6.077-4.922-11-11-11Z"/>
+          </svg>
+        </a>
+      </div>
+      <div class="Header-item Header-item--full">
+        <input class="form-control input-block" type="text" placeholder="Type / to search" aria-label="Search" />
+      </div>
+      <div class="Header-item">
+        <a class="Header-link" href="pulls.html">Pull requests</a>
+      </div>
+      <div class="Header-item">
+        <a class="Header-link" href="issues.html">Issues</a>
+      </div>
+      <div class="Header-item">
+        <a class="Header-link" href="index.html">Dashboard</a>
+      </div>
+    </header>
+
+    <main class="container-xl mt-4">
+      <div class="d-flex flex-justify-between mb-3 flex-wrap">
+        <div class="d-flex flex-items-center">
+          <svg class="octicon octicon-repo text-gray mr-2" height="32" viewBox="0 0 16 16" width="32">
+            <path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h7A2.5 2.5 0 0 1 14 2.5v11a.5.5 0 0 1-.74.439L8 11.069l-5.26 2.87A.5.5 0 0 1 2 13.5v-11Z"></path>
+          </svg>
+          <h1 class="h3 lh-condensed">
+            <span class="text-normal">hollyblue296 /</span> spectertest2
+          </h1>
+        </div>
+        <div class="repo-stats">
+          <span><svg class="octicon octicon-eye" viewBox="0 0 16 16" width="16" height="16"><path d="M8 2C3 2 0 8 0 8s3 6 8 6 8-6 8-6-3-6-8-6Zm0 10a4 4 0 1 1 0-8 4 4 0 0 1 0 8Zm0-6a2 2 0 1 0 0 4 2 2 0 0 0 0-4Z"></path></svg> 0</span>
+          <span><svg class="octicon octicon-star" viewBox="0 0 16 16" width="16" height="16"><path d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.75.75 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Z"></path></svg> 0</span>
+          <span><svg class="octicon octicon-repo-forked" viewBox="0 0 16 16" width="16" height="16"><path d="M5 3.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM3.75 4.5a2.25 2.25 0 0 0 1.5 2.122v2.256A2.25 2.25 0 0 0 5.5 10.5h.75v1.128a2.251 2.251 0 1 0 1.5 0V10.5h.75a2.25 2.25 0 0 0 .25-4.478V6.622a2.25 2.25 0 1 0-1.5 0v-.372A2.25 2.25 0 0 0 4.25 3h-.5v1.5h-.75Z"></path></svg> 0</span>
+        </div>
+      </div>
+
+      <nav class="UnderlineNav mb-4">
+        <div class="UnderlineNav-body">
+          <a class="UnderlineNav-item selected" href="#">Code</a>
+          <a class="UnderlineNav-item" href="issues.html">Issues <span class="Counter">1</span></a>
+          <a class="UnderlineNav-item" href="pulls.html">Pull requests</a>
+          <a class="UnderlineNav-item" href="#">Actions</a>
+          <a class="UnderlineNav-item" href="#">Projects</a>
+          <a class="UnderlineNav-item" href="#">Security</a>
+          <a class="UnderlineNav-item" href="#">Insights</a>
+        </div>
+      </nav>
+
+      <div class="Box mb-4">
+        <div class="Box-row">
+          <a href="#">index.html</a>
+          <span class="text-small color-fg-muted ml-2">Update index.html · last month</span>
+        </div>
+      </div>
+
+      <section class="mb-6">
+        <h2 class="h4">About</h2>
+        <p class="color-fg-muted">No description, website, or topics provided.</p>
+      </section>
+
+      <section class="mb-6">
+        <h2 class="h4">Languages</h2>
+        <div class="color-fg-muted">HTML 100.0%</div>
+      </section>
+    </main>
+
+    <footer class="text-center mt-6 mb-4 color-fg-muted">
+      <small>© 2025 GitHub, Inc.</small>
+      <div class="mt-2">
+        <a href="#">Terms</a> ·
+        <a href="#">Privacy</a> ·
+        <a href="#">Security</a> ·
+        <a href="#">Status</a> ·
+        <a href="#">Docs</a> ·
+        <a href="#">Contact</a> ·
+        <a href="#">Manage cookies</a> ·
+        <a href="#">Do not share my personal information</a>
+      </div>
+    </footer>
+  </body>
+</html>
