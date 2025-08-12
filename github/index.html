@@ -6,53 +6,61 @@
   <head>
     <!-- 🔐 Minimal password gate -->
     <style>html{display:none}</style>
-    <script>
-    (function () {
-      const COOKIE_NAME = "siteAuth";
-      const COOKIE_MAX_DAYS = 30;
-      const VERIFY_URL = "http://127.0.0.1:8787/verify";
+<script>
+(function () {
+  const COOKIE_NAME = "siteAuth";
+  const COOKIE_MAX_DAYS = 30;
+  // If your page is https, use https below (see Fix 2)
+  const VERIFY_URL = "http://127.0.0.1:8787/verify";
 
-      function hasAuthCookie() {
-        return document.cookie.split(";").some(c => c.trim().startsWith(COOKIE_NAME + "="));
-      }
-      function setAuthCookie(days) {
-        const expires = new Date(Date.now() + days*24*60*60*1000).toUTCString();
-        document.cookie = `${COOKIE_NAME}=1; Expires=${expires}; Path=/; SameSite=Lax`;
-      }
-      function allow() { document.documentElement.style.display = ""; }
-      function deny(msg) {
-        document.documentElement.innerHTML =
-          `<h1 style="text-align:center;margin-top:64px;">Access denied</h1>
-           <p style="text-align:center;color:#666;">${msg || "Invalid password or local server unavailable."}</p>`;
-      }
-      async function verify(pass) {
-        const ctl = new AbortController();
-        const t = setTimeout(() => ctl.abort(), 3000);
-        try {
-          const res = await fetch(VERIFY_URL, {
-            method: "POST",
-            headers: {"Content-Type": "application/json"},
-            body: JSON.stringify({ password: pass, host: location.host }),
-            signal: ctl.signal,
-          });
-          clearTimeout(t);
-          if (!res.ok) return { ok: false };
-          return res.json();
-        } catch {
-          clearTimeout(t);
-          return { ok: false };
-        }
-      }
-      (async function run() {
-        if (hasAuthCookie()) { allow(); return; }
-        const pass = prompt("Enter password:");
-        if (pass == null) { deny("No password entered."); return; }
-        const out = await verify(pass);
-        if (out && out.ok) { setAuthCookie(COOKIE_MAX_DAYS); allow(); }
-        else { deny(); }
-      })();
-    })();
-    </script>
+  function hasAuthCookie() {
+    return document.cookie.split(";").some(c => c.trim().startsWith(COOKIE_NAME + "="));
+  }
+  function setAuthCookie(days) {
+    const expires = new Date(Date.now() + days*24*60*60*1000).toUTCString();
+    document.cookie = `${COOKIE_NAME}=1; Expires=${expires}; Path=/; SameSite=Lax`;
+  }
+  function allow() {
+    document.documentElement.style.display = "";
+  }
+  function deny(msg) {
+    // IMPORTANT: unhide before showing the message
+    allow();
+    document.documentElement.innerHTML =
+      `<h1 style="text-align:center;margin-top:64px;">Access denied</h1>
+       <p style="text-align:center;color:#666;">${msg || "Invalid password or local server unavailable."}</p>`;
+  }
+
+  async function verify(pass) {
+    const ctl = new AbortController();
+    const t = setTimeout(() => ctl.abort(), 3000);
+    try {
+      const res = await fetch(VERIFY_URL, {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({ password: pass, host: location.host }),
+        signal: ctl.signal,
+      });
+      clearTimeout(t);
+      if (!res.ok) return { ok: false, status: res.status };
+      return res.json();
+    } catch (e) {
+      console.debug("verify() error:", e);
+      clearTimeout(t);
+      return { ok: false };
+    }
+  }
+
+  (async function run() {
+    if (hasAuthCookie()) { allow(); return; }
+    const pass = prompt("Enter password:");
+    if (pass == null) { deny("No password entered."); return; }
+    const out = await verify(pass);
+    if (out && out.ok) { setAuthCookie(COOKIE_MAX_DAYS); allow(); }
+    else { deny(); }
+  })();
+})();
+</script>
     <!-- end password gate -->
 
     <meta charset="utf-8" />
