@@ -24,6 +24,19 @@ body {
   margin-bottom: 4px;
 }
 
+.dashboard-sidebar a {
+  display: block;
+  padding: 4px 8px;
+  color: #0969da;
+  text-decoration: none;
+  border-radius: 6px;
+}
+
+.dashboard-sidebar a:hover {
+  background-color: #f6f8fa;
+  text-decoration: underline;
+}
+
 .repo-stats span {
   margin-left: 16px;
   display: inline-flex;
@@ -40,4 +53,9 @@ footer a {
 }
 footer a:hover {
   text-decoration: underline;
+}
+
+.State--closed {
+  background-color: #cf222e;
+  color: #fff;
 }
