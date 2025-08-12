@@ -29,7 +29,7 @@
         const PASS = "apple";
         const KEY = "siteAuth";
         if (localStorage.getItem(KEY) === "true"){
-          document.documentElement.style.display = "";
+          document.documentElement.style.display = "block";
 
           return;
         }
@@ -37,7 +37,7 @@
         const userPass = prompt("Enter password:");
         if (userPass === PASS) {
           localStorage.setItem(KEY, "true");
-          document.documentElement.style.display = "";
+          document.documentElement.style.display = "block";
 
         } else {
           document.documentElement.innerHTML =
