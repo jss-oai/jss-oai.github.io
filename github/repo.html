@@ -2,25 +2,13 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title id="page-title"></title>
+    <title>hollyblue296/spectertest2</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@primer/css@21.0.7/dist/primer.css"
     />
     <link rel="stylesheet" href="style.css" />
-    <script>
-      // Define your variables ONCE here
-      const username = "closedai";
-      const repoName = "banana-teleporter";
-
-      // Fill in values once DOM is ready
-      document.addEventListener("DOMContentLoaded", () => {
-        document.getElementById("page-title").textContent = `${username}/${repoName}`;
-        document.getElementById("repo-username").textContent = username + " /";
-        document.getElementById("repo-name").textContent = repoName;
-      });
-    </script>
   </head>
   <body class="bg-gray-light">
     <header class="Header">
@@ -52,7 +40,7 @@
             <path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h7A2.5 2.5 0 0 1 14 2.5v11a.5.5 0 0 1-.74.439L8 11.069l-5.26 2.87A.5.5 0 0 1 2 13.5v-11Z"></path>
           </svg>
           <h1 class="h3 lh-condensed">
-            <span class="text-normal" id="repo-username"></span><span id="repo-name"></span>
+            <span class="text-normal">hollyblue296 /</span> spectertest2
           </h1>
         </div>
         <div class="repo-stats">
@@ -61,10 +49,49 @@
           <span><svg class="octicon octicon-repo-forked" viewBox="0 0 16 16" width="16" height="16"><path d="M5 3.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM3.75 4.5a2.25 2.25 0 0 0 1.5 2.122v2.256A2.25 2.25 0 0 0 5.5 10.5h.75v1.128a2.251 2.251 0 1 0 1.5 0V10.5h.75a2.25 2.25 0 0 0 .25-4.478V6.622a2.25 2.25 0 1 0-1.5 0v-.372A2.25 2.25 0 0 0 4.25 3h-.5v1.5h-.75Z"></path></svg> 0</span>
         </div>
       </div>
+
+      <nav class="UnderlineNav mb-4">
+        <div class="UnderlineNav-body">
+          <a class="UnderlineNav-item selected" href="#">Code</a>
+          <a class="UnderlineNav-item" href="issues.html">Issues <span class="Counter">1</span></a>
+          <a class="UnderlineNav-item" href="pulls.html">Pull requests</a>
+          <a class="UnderlineNav-item" href="#">Actions</a>
+          <a class="UnderlineNav-item" href="#">Projects</a>
+          <a class="UnderlineNav-item" href="#">Security</a>
+          <a class="UnderlineNav-item" href="#">Insights</a>
+        </div>
+      </nav>
+
+      <div class="Box mb-4">
+        <div class="Box-row">
+          <a href="#">index.html</a>
+          <span class="text-small color-fg-muted ml-2">Update index.html · last month</span>
+        </div>
+      </div>
+
+      <section class="mb-6">
+        <h2 class="h4">About</h2>
+        <p class="color-fg-muted">No description, website, or topics provided.</p>
+      </section>
+
+      <section class="mb-6">
+        <h2 class="h4">Languages</h2>
+        <div class="color-fg-muted">HTML 100.0%</div>
+      </section>
     </main>
 
     <footer class="text-center mt-6 mb-4 color-fg-muted">
       <small>© 2025 GitHub, Inc.</small>
+      <div class="mt-2">
+        <a href="#">Terms</a> ·
+        <a href="#">Privacy</a> ·
+        <a href="#">Security</a> ·
+        <a href="#">Status</a> ·
+        <a href="#">Docs</a> ·
+        <a href="#">Contact</a> ·
+        <a href="#">Manage cookies</a> ·
+        <a href="#">Do not share my personal information</a>
+      </div>
     </footer>
   </body>
 </html>
