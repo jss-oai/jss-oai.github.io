@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Page not found</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      min-height: 100vh;
+      margin: 0;
+      display: grid;
+      place-items: center;
+      background: radial-gradient(circle at top, rgba(255, 205, 120, 0.25), rgba(255, 245, 230, 0.9));
+      color: #1a1333;
+      text-align: center;
+      padding: 2rem;
+    }
+    main {
+      max-width: 480px;
+      background: rgba(255, 255, 255, 0.85);
+      border-radius: 18px;
+      padding: 2.5rem 2rem;
+      box-shadow: 0 1.4rem 3.2rem rgba(0, 0, 0, 0.15);
+    }
+    h1 {
+      margin-top: 0;
+      font-size: clamp(1.8rem, 4vw, 2.4rem);
+    }
+    p {
+      margin-bottom: 1.2rem;
+    }
+    a {
+      color: inherit;
+      text-underline-offset: 0.25em;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>We couldn't find that page</h1>
+    <p id="message">Trying to figure out where to send you…</p>
+    <p><a href="/">Head back to the home page</a></p>
+  </main>
+  <script>
+    (function () {
+      var path = window.location.pathname || "";
+      var lowerPath = path.toLowerCase();
+      var prefix = "/every/";
+      var defaultString = "0";
+      var matchCandidate = null;
+
+      if (lowerPath === "/every") {
+        var shortcut = window.location.search.match(/[?&]q=([0-9a-z]{1,15})/i);
+        matchCandidate = shortcut ? shortcut[1] : defaultString;
+      } else if (lowerPath.startsWith(prefix)) {
+        var tail = path.slice(prefix.length);
+        var segments = tail.split("/").filter(Boolean);
+        if (segments.length > 0) {
+          matchCandidate = segments.join("");
+        }
+      }
+
+      if (!matchCandidate) {
+        var queryMatch = window.location.search.match(/[?&]q=([0-9a-z]{1,15})/i);
+        if (queryMatch && lowerPath === "/every/" ) {
+          matchCandidate = queryMatch[1];
+        }
+      }
+
+      if (matchCandidate && /^[0-9a-z]{1,15}$/i.test(matchCandidate)) {
+        var normalized = matchCandidate.toLowerCase();
+        var target = prefix + "?q=" + encodeURIComponent(normalized);
+        document.getElementById("message").textContent = "Redirecting to " + target + " …";
+        window.location.replace(target);
+        return;
+      }
+
+      document.getElementById("message").textContent = "Try visiting /every/?q=your-string-here to load a specific value.";
+    })();
+  </script>
+</body>
+</html>
