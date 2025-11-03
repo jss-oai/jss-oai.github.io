@@ -1,1 +1,54 @@
-this is julie's website :) 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Julie's website :)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      min-height: 100vh;
+      margin: 0;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, #f7c6ff 0%, #a7c5ff 50%, #8ff0ff 100%);
+      color: #210b31;
+    }
+    main {
+      background: rgba(255, 255, 255, 0.82);
+      border-radius: 24px;
+      padding: 3rem;
+      box-shadow: 0 1.5rem 3.4rem rgba(33, 11, 49, 0.25);
+      text-align: center;
+      max-width: 520px;
+    }
+    h1 {
+      margin-top: 0;
+      font-size: clamp(2rem, 6vw, 2.8rem);
+    }
+    p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+    a {
+      color: #210b31;
+      font-weight: 600;
+      text-decoration: none;
+      border-bottom: 2px solid rgba(33, 11, 49, 0.35);
+      padding-bottom: 0.2rem;
+      transition: border-color 120ms ease;
+    }
+    a:hover,
+    a:focus-visible {
+      border-color: rgba(33, 11, 49, 0.65);
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>this is julie's website :)</h1>
+    <p>Welcome! If you're curious about the big experiment, start exploring <br><strong>every alphanumeric string up to 15 characters</strong>.</p>
+    <p><a href="every/?q=0">Launch the Every explorer</a></p>
+  </main>
+</body>
+</html>
